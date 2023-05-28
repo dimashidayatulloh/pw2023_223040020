@@ -2,46 +2,43 @@
 
 /* style */
 body {
-    background-color: #f0f2f2;
     font-family: 'Poppins', sans-serif;
+    background: #fff;
 }
 
 /* navbar */
+.navbar-custom {
+    background-color: rgb(0, 0, 0, .8);
+}
+
 nav li {
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 .nav-item:hover {
-    border-bottom: 2px solid gold;
-
+    border-bottom: 1px solid gold;
 }
 
 .img {
     border-right: 1px solid #f0f2f2;
 }
 
-.button {
-    border: 1px solid white;
-}
-
-.nav-fixed {
-    transition: 0.3s ease-in-out;
-}
-
-.nav-active {
-    background-color: #000;
-    border-bottom: 1px solid rgba(255, 255, 255, .3);
-}
-
 /* Hero */
-#beranda {
-    height: 100vh;
+#about {
+    height: 92vh;
+}
+
+#hero {
     background: url(../img/img-hero.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .95;
+    height: 30vh;
 }
 
-/* Tentang */
-#tentang {
-    background-color: #000;
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+    border: 1px solid gold;
 }
 
 /* Footer */
@@ -58,8 +55,6 @@ footer h4:hover {
 }
 
 /* responsive */
-
-
 @media (max-width: 576px) {
 
     /* Footer */
@@ -90,16 +85,4 @@ footer h4:hover {
     footer h4 {
         font-size: 15px;
     }
-}
-
-@media (max-width: 992px) {
-
-}
-
-@media (max-width: 1200px) {
-
-}
-
-@media (max-width: 1400px) {
-
 }

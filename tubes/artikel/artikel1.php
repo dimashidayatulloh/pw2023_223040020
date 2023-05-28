@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// cek session
+// if (!isset($_SESSION["login"])) {
+//     header("Location: ../login.php");
+//     exit;
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +19,7 @@
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!-- css -->
-    <link rel="stylesheet" href="css/artikel1.css">
+    <link rel="stylesheet" href="../css/artikel1.css">
 </head>
 
 <body>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// cek session
+// if (!isset($_SESSION["login"])) {
+//     header("Location: ../login.php");
+//     exit;
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,45 +19,48 @@
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!-- css -->
-    <link rel="stylesheet" href="css/artikel.css">
+    <link rel="stylesheet" href="../css/artikel.css">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-text fw-semibold navbar-custom navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand me-3" href="index.php">
-                <img src="img/logo.png" alt="Logo" width="70" height="40" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-lg-1 ">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#beranda">BERANDA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#berita">BERITA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tentang">TENTANG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">KONTAK</a>
-                    </li>
-                </ul>
-                <form class="container-fluid justify-content-end navbar-nav">
-                    <button class="btn btn-outline-success me-2 p-0" type="button"><a class="nav-link" href="login.php">MASUK</a></button>
-                    <br>
-                    <button class="btn btn-outline-success me-2 p-0" type="button"><a class="nav-link" href="register.php">DAFTAR</a></button>
-                </form>
-            </div>
-        </div>
-    </nav>
+
 
     <div class="container px-5">
-        <div class="card pt-5 mt-3">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-text fw-semibold navbar-custom">
+            <div class="container">
+                <a class="navbar-brand me-3" href="index.php">
+                    <img src="img/logo.png" alt="Logo" width="70" height="40" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-lg-1 ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#beranda">BERANDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#berita">BERITA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tentang">TENTANG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#kontak">KONTAK</a>
+                        </li>
+                    </ul>
+                    <form class="container-fluid justify-content-end navbar-nav">
+                        <button class="btn btn-outline-success me-2 p-0" type="button"><a class="nav-link" href="login.php">MASUK</a></button>
+                        <br>
+                        <button class="btn btn-outline-success me-2 p-0" type="button"><a class="nav-link" href="register.php">DAFTAR</a></button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- content -->
+        <div class="card">
             <img src="img/rn10p.jpg" class="card-img-top img" alt="smartphone">
             <div class="card-body">
                 <h2 class="card-title">Smartphone Redmi Note 10 Pro</h2>
