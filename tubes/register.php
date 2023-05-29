@@ -4,7 +4,7 @@ session_start();
 require 'functions.php';
 
 // cek session
-if (isset($_SESSION["login"])) {
+if (isset($_SESSION['username'])) {
     header("Location: index.php");
     exit;
 }

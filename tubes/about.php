@@ -3,7 +3,7 @@
 session_start();
 
 // cek session
-if ((!isset($_SESSION['user_name'])) || (!isset($_SESSION['admin_name']))) {
+if (!isset($_SESSION["username"])) {
     header("Location: login.php");
     exit;
 }

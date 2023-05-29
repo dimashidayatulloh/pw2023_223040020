@@ -4,7 +4,7 @@ session_start();
 require 'functions.php';
 
 // cek session
-if ((isset($_SESSION['user_name'])) || (isset($_SESSION['admin_name']))) {
+if (isset($_SESSION['username'])) {
     header("Location: index.php");
     exit;
 }
@@ -24,15 +24,14 @@ if (isset($_POST["login"])) {
         if (password_verify($password, $row["password"])) {
 
             // set session
-            if ($row['level'] == 'admin') {
+            $_SESSION["username"] = $row["username"];
+            $_SESSION["level"] = $row["level"];
 
-                $_SESSION['admin_name'] = $row['username'];
+            if ($row["level"] == "admin") {
                 header('location:admin_page.php');
                 exit;
-            } else if ($row['level'] == 'user') {
-
-                $_SESSION['user_name'] = $row['username'];
-                header('location:index.php');
+            } else {
+                header('location:user_page.php');
                 exit;
             }
         } else {
