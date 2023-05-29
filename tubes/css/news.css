@@ -70,7 +70,7 @@ footer h4:hover {
 
 @media (max-width: 768px) {
     /* nav */
-    nav .btn-outline-success {
+    nav .btn-outline-warning {
         margin-top: 7px;
     }
     nav ul {

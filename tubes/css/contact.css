@@ -19,13 +19,9 @@ nav li {
     border-right: 1px solid #f0f2f2;
 }
 
-.button {
-    border: 1px solid white;
-}
-
 .nav-fixed {
-    transition: 0.3s ease-in-out;
     background-color: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, .8);
 }
 
 /* Contact */
@@ -62,7 +58,7 @@ footer h4:hover {
 
 @media (max-width: 768px) {
     /* nav */
-    nav .btn-outline-success {
+    nav .btn-outline-warning {
         margin-top: 7px;
     }
     nav ul {
