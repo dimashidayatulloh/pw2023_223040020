@@ -24,8 +24,8 @@ nav li {
 }
 
 .nav-active {
-    background-color: #000;
-    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    background-color: #fff;
+    border-bottom: 2px solid #eaeaea;
 }
 
 /* Hero */
@@ -33,11 +33,6 @@ nav li {
     height: 100vh;
     background: url(../img/img-hero.jpg);
     background-size: cover;
-}
-
-/* Tentang */
-#tentang {
-    background-color: #000;
 }
 
 /* Footer */
@@ -54,8 +49,6 @@ footer h4:hover {
 }
 
 /* responsive */
-
-
 @media (max-width: 576px) {
 
     /* Footer */

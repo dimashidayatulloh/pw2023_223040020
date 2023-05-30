@@ -1,6 +1,11 @@
 <?php
 require('partials/contact.header.php');
-require('partials/nav.php');
+
+if (isset($_SESSION["username"])) {
+    include "partials/nav_login.php";
+} else {
+    include "partials/nav.php";
+}
 ?>
 
 <!-- Kontak -->

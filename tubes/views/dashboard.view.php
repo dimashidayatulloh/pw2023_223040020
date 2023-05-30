@@ -11,8 +11,9 @@
 </head>
 
 <body>
+    <?php include "partials/nav_login.php"; ?>
     <!-- Nav -->
-    <div class="container pt-5">
+    <div class="container pt-5 mt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
@@ -36,43 +37,28 @@
                 <thead>
                     <tr>
                         <th scope="col">No</th>
+                        <th scope="col">Gambar</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Ubah</th>
-                        <th scope="col">Info</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Subaru</td>
-                        <td>subaru@mail.com</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="#">Ubah</a>
-                            <a class="btn btn-sm btn-danger" href="#">Hapus</a>
-                        </td>
-                        <td><a class="btn btn-sm btn-info" href="#">Selengkapnya</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Colly</td>
-                        <td>colly@mail.com</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="#">Ubah</a>
-                            <a class="btn btn-sm btn-danger" href="#">Hapus</a>
-                        </td>
-                        <td><a class="btn btn-sm btn-info" href="#">Selengkapnya</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>larry@mail.com</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="#">Ubah</a>
-                            <a class="btn btn-sm btn-danger" href="#">Hapus</a>
-                        </td>
-                        <td><a class="btn btn-sm btn-info" href="#">Selengkapnya</a></td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($users as $user) : ?>
+                        <tr>
+                            <th scope="row"><?= $i++; ?></th>
+                            <td><img src="img/<?= $student['gambar']; ?>" alt="" class="img img-thumbnail rounded" width="50px" height="50px"></td>
+                            <td><?= $user["username"]; ?></td>
+                            <td><?= $user["email"]; ?></td>
+                            <td><?= $user["level"]; ?></td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" href="#">Ubah</a>
+                                <a class="btn btn-sm btn-danger" href="#">Hapus</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

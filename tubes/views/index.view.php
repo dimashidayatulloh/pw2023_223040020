@@ -1,14 +1,20 @@
 <?php
 require('partials/header.php');
-require('partials/nav.php');
+
+if (isset($_SESSION["username"])) {
+    include "partials/nav_login.php";
+} else {
+    include "partials/nav.php";
+}
+
 ?>
 
 <!-- Hero -->
 <section id="beranda">
 </section>
 
-<!-- Berita -->
-<section id="berita">
+<!-- Berita populer -->
+<section id="populer">
     <div class="container mt-5 pt-3">
         <div class="card my-3 mx-auto w-100 shadow">
             <div class="row g-3">

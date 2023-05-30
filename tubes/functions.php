@@ -1,7 +1,40 @@
 <?php
 
+define('BASE_URL', '/pw2023_223040020/tubes/');
+
 $conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
+function query($query)
+{
+    global $conn;
+    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+    $rows = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+// tambah data
+function tambah($data)
+{
+    global $conn;
+
+    $username = $data['username'];
+    $email = $data['email'];
+    $level = $data['level'];
+    $gambar = $data['gambar'];
+
+
+    $query = "INSERT INTO mahasiswa VALUES (null, '$username', '$email', '$level', '$gambar')";
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+    return mysqli_affected_rows($data);
+}
+
+// registrasi
 function register($data)
 {
     global $conn;
@@ -33,4 +66,9 @@ function register($data)
     mysqli_query($conn, "INSERT INTO user VALUES( null, '$username', '$email', '$password')");
 
     return mysqli_affected_rows($conn);
+}
+
+function uriIS($uri)
+{
+    return ($_SERVER["REQUEST_URI"] === BASE_URL) ? 'active' : '';
 }
