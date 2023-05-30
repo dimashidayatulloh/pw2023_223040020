@@ -16,17 +16,19 @@ if ($_SESSION["level"] != "admin") {
     exit;
 }
 
-// tambah data
-if (isset($_POST["tambah"])) {
-    if (tambah($_POST) > 0) {
+// ubah data
+$id = $_GET['id'];
+$user = query("SELECT * FROM user WHERE id = $id")[0];
+if (isset($_POST["ubah"])) {
+    if (ubah($_POST) > 0) {
         echo "<script>
-                alert('Data berhasil ditambahkan!');
+                alert('Data berhasil diubah!');
                 document.location.href = 'admin_page.php';
               </script>";
     }
 }
 
-// Siapkan data user 
-$data = query("SELECT * FROM user");
+// Siapkan data user
+$users = query("SELECT * FROM user");
 
-require('views/tambah.view.php');
+require('views/ubah.view.php');

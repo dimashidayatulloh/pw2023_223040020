@@ -29,8 +29,8 @@
         </div>
         <div class="card">
             <!-- Button trigger modal -->
-            <button id="create" type="button" class="btn btn-success position-absolute" data-bs-toggle="modal" data-bs-target="#exampleModal" style="top: -38px;right:0;">
-                Add New List
+            <button type="button" class="btn btn-success position-absolute" style="top: -38px;right:0;">
+                <a class="nav-link" href="tambah.php">Add New List</a>
             </button>
             <!-- Table -->
             <table class="table table-hover">
@@ -49,57 +49,18 @@
                     <?php foreach ($users as $user) : ?>
                         <tr>
                             <th scope="row"><?= $i++; ?></th>
-                            <td><img src="img/<?= $student['gambar']; ?>" alt="" class="img img-thumbnail rounded" width="50px" height="50px"></td>
+                            <td><img src="img/<?= $user['gambar']; ?>" alt="" class="img img-thumbnail rounded" width="50px" height="50px"></td>
                             <td><?= $user["username"]; ?></td>
                             <td><?= $user["email"]; ?></td>
                             <td><?= $user["level"]; ?></td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="#">Ubah</a>
-                                <a class="btn btn-sm btn-danger" href="#">Hapus</a>
+                                <a class="btn btn-sm btn-primary" href="ubah.php?id=<?= $user['id']; ?>">Ubah</a>
+                                <a class="btn btn-sm btn-danger" href="hapus.php?id=<?= $user['id']; ?>">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah akun</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- form -->
-                        <div class="card-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="password" required>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="button" class="btn btn-primary">Simpan</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

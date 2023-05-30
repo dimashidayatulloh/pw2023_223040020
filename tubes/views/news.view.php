@@ -1,5 +1,4 @@
 <?php
-
 require('partials/news.header.php');
 
 if (isset($_SESSION["username"])) {
@@ -17,14 +16,15 @@ if (isset($_SESSION["username"])) {
     <!-- card -->
     <div class="container p-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php $i = 1; ?>
             <?php foreach ($cards as $card) : ?>
                 <div class="col">
                     <div class="card h-100 shadow">
-                        <img src="img/<?= $card["image"]; ?>" class="card-img-top" alt="...">
+                        <img src="img/<?= $card["gambar"]; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Mar 27, 2023</small></p>
-                            <h5 class="card-title"><?= $card["title"]; ?></h5>
-                            <p class="card-text"><?= $card["description"]; ?></p>
+                            <h5 class="card-title"><?= $card["judul"]; ?></h5>
+                            <p class="card-text"><?= $card["deskripsi"]; ?></p>
                             <a href="artikel/artikel1.php" class="btn btn-primary">Baca Selengkapnya</a>
                         </div>
                     </div>

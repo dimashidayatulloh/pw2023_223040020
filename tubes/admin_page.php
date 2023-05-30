@@ -16,8 +16,6 @@ if ($_SESSION["level"] != "admin") {
     exit;
 }
 
-$name = 'Home';
-
 // Siapkan data $users 
 $users = query("SELECT * FROM user");
 
