@@ -1,13 +1,14 @@
 <?php require('partials/header.php'); ?>
-<?php require('partials/nav_login.php'); ?>
+<?php require('partials/nav_admin.php'); ?>
 
 <!-- form -->
 <div class="py-4"></div>
 <div class="card shadow mx-auto mt-5" style="max-width: 500px;">
     <div class="card-body">
         <h2 class="text-center mt-3 mb-5">Ubah Data</h2>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $user['id']; ?>">
+            <input type="hidden" name="gambarLama" value="<?= $user['gambar']; ?>">
             <div class="mb-3">
                 <label for="username" class="form-label">username</label>
                 <input type="text" class="form-control" name="username" id="username" autofocus required value="<?= $user['username']; ?>">
@@ -21,8 +22,9 @@
                 <input type="text" class="form-control" name="level" id="level" required value="<?= $user['level']; ?>">
             </div>
             <div class="mb-3">
-                <label for="gambar" class="form-label">Gambar</label>
-                <input type="text" class="form-control" name="gambar" id="gambar" required value="<?= $user['gambar']; ?>">
+                <label for="gambar" class="form-label">Gambar</label><br>
+                <img src="img/<?= $user['gambar']; ?>" alt="" class="img img-thumbnail mb-2" width="75">
+                <input type="file" class="form-control form-control-sm" name="gambar" id="gambar">
             </div>
             <button class="btn btn-primary" type="submit" name="ubah">Ubah Data</button>
         </form>

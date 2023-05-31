@@ -16,6 +16,11 @@ if ($_SESSION["level"] != "admin") {
     exit;
 }
 
+// add data dari session
+$username = $_SESSION['username'];
+
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+
 // tambah data
 if (isset($_POST["tambah"])) {
     if (tambah($_POST) > 0) {

@@ -10,6 +10,11 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
+// add data dari session
+$username = $_SESSION['username'];
+
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+
 // Siapkan data $cards 
 $cards = query("SELECT * FROM article_list");
 

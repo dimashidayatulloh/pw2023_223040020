@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <?php include "partials/nav_login.php"; ?>
+    <?php include "partials/nav_admin.php"; ?>
     <!-- Nav -->
     <div class="container pt-5 mt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
         </nav>
@@ -27,11 +27,23 @@
         <div class="card-body text-center pb-5">
             <h2 class="card-title">Daftar Pengguna</h2>
         </div>
-        <div class="card">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success position-absolute" style="top: -38px;right:0;">
+
+        <!-- Button tambah -->
+        <div class="position-absolute">
+            <button type="button" class="btn btn-success">
                 <a class="nav-link" href="tambah.php">Add New List</a>
             </button>
+        </div>
+
+        <!-- live search -->
+        <form class="d-flex justify-content-end" role="search" action="" method="post">
+            <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off">
+            <button class="btn btn-outline-success" type="submit" name="cari">Search</button>
+        </form>
+
+        <hr>
+
+        <div class="card">
             <!-- Table -->
             <table class="table table-hover">
                 <thead>

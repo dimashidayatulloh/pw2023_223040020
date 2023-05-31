@@ -31,7 +31,7 @@ if (isset($_POST["login"])) {
                 header('location:admin_page.php');
                 exit;
             } else {
-                header('location:user_page.php');
+                header('location:index.php');
                 exit;
             }
         } else {

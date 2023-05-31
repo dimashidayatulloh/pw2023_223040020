@@ -1,8 +1,12 @@
 <?php
-require('partials/contact.header.php');
+require 'partials/contact.header.php';
 
 if (isset($_SESSION["username"])) {
-    include "partials/nav_login.php";
+    if ($_SESSION["level"] === "admin") {
+        include "partials/nav_admin.php";
+    } else {
+        include "partials/nav_user.php";
+    }
 } else {
     include "partials/nav.php";
 }
@@ -40,3 +44,9 @@ if (isset($_SESSION["username"])) {
         </div>
     </div>
 </section>
+
+<!-- bootstrap 5 js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

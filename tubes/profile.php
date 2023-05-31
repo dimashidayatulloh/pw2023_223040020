@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require('functions.php');
@@ -10,29 +9,18 @@ if (!isset($_SESSION["username"])) {
     header("Location: index.php");
     exit;
 }
-if ($_SESSION["level"] != "admin") {
 
-    header("Location: index.php");
-    exit;
-}
-// add data dari session
+// ubah data
 $username = $_SESSION['username'];
 
 $user = query("SELECT * FROM user WHERE username = '$username'")[0];
-
-// ubah data
-$id = $_GET['id'];
-$user = query("SELECT * FROM user WHERE id = $id")[0];
 if (isset($_POST["ubah"])) {
     if (ubah($_POST) > 0) {
         echo "<script>
                 alert('Data berhasil diubah!');
-                document.location.href = 'admin_page.php';
+                document.location.href = 'profil.php';
               </script>";
     }
 }
 
-// Siapkan data user
-$users = query("SELECT * FROM user");
-
-require('views/ubah.view.php');
+require "views/profile.view.php";

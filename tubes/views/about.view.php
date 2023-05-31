@@ -3,7 +3,11 @@
 require('partials/about.header.php');
 
 if (isset($_SESSION["username"])) {
-    include "partials/nav_login.php";
+    if ($_SESSION["level"] === "admin") {
+        include "partials/nav_admin.php";
+    } else {
+        include "partials/nav_user.php";
+    }
 } else {
     include "partials/nav.php";
 }

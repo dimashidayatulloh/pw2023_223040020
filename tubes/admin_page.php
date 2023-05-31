@@ -16,7 +16,17 @@ if ($_SESSION["level"] != "admin") {
     exit;
 }
 
-// Siapkan data $users 
+// add data dari session
+$username = $_SESSION['username'];
+
+$user = query("SELECT * FROM user WHERE username = '$username'")[0];
+
+// Siapkan data user
 $users = query("SELECT * FROM user");
+
+// tombol cari ditekan
+if (isset($_POST['cari'])) {
+    $users = cari($_POST['keyword']);
+}
 
 require 'views/dashboard.view.php';
