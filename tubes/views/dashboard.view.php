@@ -37,13 +37,13 @@
 
         <!-- live search -->
         <form class="d-flex justify-content-end" role="search" action="" method="post">
-            <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off">
-            <button class="btn btn-outline-success" type="submit" name="cari">Search</button>
+            <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off" id="keyword">
+            <button class="btn btn-outline-success" type="submit" name="cari" id="tombol-cari">Search</button>
         </form>
 
         <hr>
 
-        <div class="card">
+        <div class="card" id="tabel">
             <!-- Table -->
             <table class="table table-hover">
                 <thead>
@@ -61,7 +61,7 @@
                     <?php foreach ($users as $user) : ?>
                         <tr>
                             <th scope="row"><?= $i++; ?></th>
-                            <td><img src="img/<?= $user['gambar']; ?>" alt="" class="img img-thumbnail rounded" width="50px" height="50px"></td>
+                            <td><img src="img/<?= $user['gambar']; ?>" alt="" class="img img-thumbnail rounded-circle" width="50px" height="50px"></td>
                             <td><?= $user["username"]; ?></td>
                             <td><?= $user["email"]; ?></td>
                             <td><?= $user["level"]; ?></td>
@@ -78,6 +78,8 @@
 
     <!-- bootstrap 5 js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

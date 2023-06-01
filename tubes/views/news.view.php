@@ -19,8 +19,22 @@ if (isset($_SESSION["username"])) {
     </div>
     <!-- card -->
     <div class="container p-5">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <?php $i = 1; ?>
+        <div class="row mb-3" id="kategori">
+            <div class="col-md-4">
+                <h1 class="fw-bold">Blog</h1>
+            </div>
+            <div class="col-md-8 pt-2">
+                <form action="" method="get">
+                    <a class="btn btn-primary me-2" href="news.php" role="button">All</a>
+                    <?php foreach ($kategoris as $kategori) : ?>
+                        <button class="btn btn-primary me-2" type="submit" name="kategori" value="<?= $kategori["id_kategori"]; ?>"><?= $kategori["nama_kategori"]; ?></button>
+                    <?php endforeach; ?>
+                </form>
+            </div>
+
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="card-list">
+            <!-- list postingan -->
             <?php foreach ($cards as $card) : ?>
                 <div class="col">
                     <div class="card h-100 shadow">

@@ -15,7 +15,15 @@ $username = $_SESSION['username'];
 
 $user = query("SELECT * FROM user WHERE username = '$username'")[0];
 
-// Siapkan data $cards 
-$cards = query("SELECT * FROM article_list");
+// Siapkan data postingan
+$cards = query("SELECT * FROM postingan");
+
+// data kategori
+$kategoris = query("SELECT * FROM kategori");
+
+// tombol kategori ditekan
+if (isset($_GET['kategori'])) {
+    $cards = cariK($_GET['kategori']);
+}
 
 require 'views/news.view.php';

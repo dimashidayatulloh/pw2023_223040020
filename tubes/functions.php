@@ -144,6 +144,15 @@ function cari($keyword)
     return query($query);
 }
 
+// cari kategori
+function cariK($keyword)
+{
+    $query = "SELECT postingan.* 
+                FROM postingan NATURAL JOIN kategori 
+                    WHERE id_kategori = '$keyword'";
+    return query($query);
+}
+
 // reset password
 function resetPass($data)
 {
@@ -204,19 +213,6 @@ function register($data)
     mysqli_query($conn, "INSERT INTO user VALUES( null, '$username', '$email', '$password')");
 
     return mysqli_affected_rows($conn);
-}
-
-function newList($query)
-{
-    global $conn;
-    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-
-    $rows = [];
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
-    }
-    return $rows;
 }
 
 function uriIS($uri)

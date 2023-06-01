@@ -76,19 +76,20 @@
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" autocomplete="off">
+                        <input type="hidden" name="id" value="<?= $user['id']; ?>">
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="text" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <div class="mb-3">
                             <label for="password2" class="form-label">Konfirmasi password</label>
-                            <input type="password2" class="form-control" id="password2" name="password2" required>
+                            <input type="password" class="form-control" id="password2" name="password2" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" name="resetPass">Save changes</button>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
