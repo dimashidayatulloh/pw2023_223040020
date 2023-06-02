@@ -24,6 +24,7 @@ nav li {
 }
 
 .nav-fixed {
+    background-color: #fff;
     width: 100%;
     position: fixed;
     transition: 0.3s ease-in-out;
@@ -31,12 +32,12 @@ nav li {
 
 .nav-active {
     background-color: #fff;
-    border-bottom: 2px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
 }
 
 /* Hero */
 .list-card {
-    padding-bottom: 500px;
+    padding-bottom: 100px;
 }
 #hero {
     height: 30vh;

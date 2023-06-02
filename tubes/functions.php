@@ -215,6 +215,21 @@ function register($data)
     return mysqli_affected_rows($conn);
 }
 
+function pesan($data)
+{
+    global $conn;
+
+    $nama = strtolower(stripslashes($data["nama"]));
+    $email = strtolower(stripslashes($data["email"]));
+    $pesan = strtolower(stripslashes($data["pesan"]));
+    $userId = $data["id_user"];
+
+    // Tambahkan pesan baru ke db
+    mysqli_query($conn, "INSERT INTO pesan VALUES( null, '$nama', '$email', '$pesan', '$userId')");
+
+    return mysqli_affected_rows($conn);
+}
+
 function uriIS($uri)
 {
     return ($_SERVER["REQUEST_URI"] === BASE_URL) ? 'active' : '';

@@ -1,6 +1,8 @@
 <?php
-require('partials/header.php');
+require "partials/header.php";
+?>
 
+<?php
 if (isset($_SESSION["username"])) {
     if ($_SESSION["level"] === "admin") {
         include "partials/nav_admin.php";
@@ -10,27 +12,36 @@ if (isset($_SESSION["username"])) {
 } else {
     include "partials/nav.php";
 }
-
 ?>
 
 <!-- Hero -->
-<section id="beranda">
+<section class="heroContent">
+    <div class="textBox container">
+        <h2>Selamat Datang</h2><br>
+        <p>Semoga harimu menyenangkan!</p>
+        <a href="" class="btn btn-primary rounded-pill">Get started</a>
+    </div>
+    <div class="imgBox">
+        <img src="img/bg_landing.png" class="pe-5" width="750px">
+    </div>
 </section>
 
 <!-- Berita populer -->
-<section id="populer">
+<section>
     <div class="container mt-5 pt-3">
         <div class="card my-3 mx-auto w-100 shadow">
             <div class="row g-3">
                 <div class="col-md-7">
-                    <img src="img/rn10p.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="img/rn10p.jpg" class="img-fluid rounded-start">
                 </div>
                 <div class="col-md-5">
                     <div class="card-body">
-                        <p class="card-text"><small class="text-muted">Mar 27, 2023</small></p>
+                        <p class="card-text"><small class="text-muted">Juni 02, 2023</small></p>
                         <h5 class="card-title">Redmi Note 10 Pro</h5>
-                        <p class="card-text">This is a wider card with supporting text ...</p>
-                        <a href="artikel/artikel.php" class="btn btn-primary">Read More</a>
+                        <p class="card-text">
+                            Xiaomi selalu mengeluarkan smartphone yang memiliki harga ...
+                            <a href="artikel.php">Lihat Selengkapnya</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -38,44 +49,50 @@ if (isset($_SESSION["username"])) {
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="img/smartphone.jpg" class="card-img-top" alt="...">
+                    <img src="img/laptop-1.jpg" class="card-img-top" height="250px">
                     <div class="card-body">
-                        <p class="card-text"><small class="text-muted">Mar 27, 2023</small></p>
-                        <h5 class="card-title">Sejarah Smartphone</h5>
-                        <p class="card-text">This is a wider card with supporting text ...</p>
-                        <a href="artikel/artikel1.php" class="btn btn-primary">Read More</a>
+                        <p class="card-text"><small class="text-muted">Juni 02, 2023</small></p>
+                        <h5 class="card-title">Rekomendasi Laptop Harga 4 jutaan</h5>
+                        <p class="card-text">
+                            Semakin berkembangnya teknologi informasi dan teknologi ...
+                            <a href="artikel1.php">Lihat Selengkapnya</a>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="img/smartphone.jpg" class="card-img-top" alt="...">
+                    <img src="img/gt-1.jpg" class="card-img-top" height="250px">
                     <div class="card-body">
-                        <p class="card-text"><small class="text-muted">Mar 27, 2023</small></p>
-                        <h5 class="card-title">Sejarah Smartphone</h5>
-                        <p class="card-text">This is a wider card with supporting text ...</p>
-                        <a href="artikel/artikel1.php" class="btn btn-primary">Read More</a>
+                        <p class="card-text"><small class="text-muted">Juni 02, 2023</small></p>
+                        <h5 class="card-title">Guardian Tales</h5>
+                        <p class="card-text">
+                            Guardian Tales adalah game RPG petualangan yang penuh dengan puzzle dan ...
+                            <a href="artikel2.php">Lihat Selengkapnya</a>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 shadow">
-                    <img src="img/smartphone.jpg" class="card-img-top" alt="...">
+                    <img src="img/indihome.jpg" class="card-img-top" height="250px">
                     <div class="card-body">
-                        <p class="card-text"><small class="text-muted">Mar 27, 2023</small></p>
-                        <h5 class="card-title">Sejarah Smartphone</h5>
-                        <p class="card-text">This is a wider card with supporting text ...</p>
-                        <a href="artikel/artikel1.php" class="btn btn-primary">Read More</a>
+                        <p class="card-text"><small class="text-muted">Juni 02, 2023</small></p>
+                        <h5 class="card-title">Integrasi Indihome ke Telkomsel</h5>
+                        <p class="card-text">
+                            PT Telkom Indonesia (Persero) Tbk memperoleh persetujuan ...
+                            <a href="artikel3.php">Lihat Selengkapnya</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- btn -->
-        <button type="button" class="btn btn-primary my-5">View All</button>
+        <button type="button" class="btn btn-primary my-5"><a href="news.php" class="text-white text-decoration-none">View All</a></button>
     </div>
 </section>
 
 <?php
-require('partials/footer.php');
+require "partials/footer.php";
 ?>

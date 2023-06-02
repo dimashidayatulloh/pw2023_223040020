@@ -4,9 +4,8 @@ session_start();
 require 'functions.php';
 
 // add data dari session
-$username = $_SESSION['username'];
-
-if (isset($username)) {
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
     $user = query("SELECT * FROM user WHERE username = '$username'")[0];
 }
 

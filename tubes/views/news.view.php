@@ -13,7 +13,7 @@ if (isset($_SESSION["username"])) {
 ?>
 
 <!-- hero -->
-<section class="list-card">
+<section class="list-card pt-5">
     <div class="d-flex justify-content-center align-items-center" id="hero">
         <h2 class="text-center text-white fw-bold">ARTIKEL</h2>
     </div>
@@ -24,6 +24,7 @@ if (isset($_SESSION["username"])) {
                 <h1 class="fw-bold">Blog</h1>
             </div>
             <div class="col-md-8 pt-2">
+                <!-- kategori -->
                 <form action="" method="get">
                     <a class="btn btn-primary me-2" href="news.php" role="button">All</a>
                     <?php foreach ($kategoris as $kategori) : ?>
@@ -37,13 +38,12 @@ if (isset($_SESSION["username"])) {
             <!-- list postingan -->
             <?php foreach ($cards as $card) : ?>
                 <div class="col">
-                    <div class="card h-100 shadow">
-                        <img src="img/<?= $card["gambar"]; ?>" class="card-img-top" alt="...">
+                    <div class="card shadow">
+                        <img src="img/<?= $card["gambar"]; ?>" class="card-img-top" height="230px">
                         <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Mar 27, 2023</small></p>
+                            <p class="card-text"><small class="text-muted">Juni 02, 2023</small></p>
                             <h5 class="card-title"><?= $card["judul"]; ?></h5>
-                            <p class="card-text"><?= $card["deskripsi"]; ?></p>
-                            <a href="artikel/artikel1.php" class="btn btn-primary">Baca Selengkapnya</a>
+                            <p class="card-text"><?= $card["deskripsi"]; ?><a href="<?= $card["link"]; ?>.php">Baca Selengkapnya</a></p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,6 @@ if (isset($_SESSION["username"])) {
                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
         </nav>

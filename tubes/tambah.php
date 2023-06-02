@@ -2,7 +2,7 @@
 
 session_start();
 
-require('functions.php');
+require "functions.php";
 
 // cek session
 if (!isset($_SESSION["username"])) {

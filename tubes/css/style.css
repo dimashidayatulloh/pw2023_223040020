@@ -19,21 +19,43 @@ nav li {
     border-right: 1px solid #f0f2f2;
 }
 
+.navbar-custom {
+    background-color: transparent;
+}
+
 .nav-fixed {
     transition: 0.3s ease-in-out;
 }
 
 .nav-active {
     background-color: #fff;
-    border-bottom: 2px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
 }
 
 /* Hero */
-#beranda {
+.heroContent {
     height: 100vh;
-    background: url(../img/img-hero.jpg);
-    background-size: cover;
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.heroContent .textBox {
+    position: relative;
+    max-width: 600px;
+}
+
+.textBox h2 {
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4rem;
+    font-weight: 500;
+}
+
+
 
 /* Footer */
 footer {
@@ -79,16 +101,4 @@ footer h4:hover {
     footer h4 {
         font-size: 15px;
     }
-}
-
-@media (max-width: 992px) {
-
-}
-
-@media (max-width: 1200px) {
-
-}
-
-@media (max-width: 1400px) {
-
 }

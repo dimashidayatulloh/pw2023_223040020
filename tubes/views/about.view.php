@@ -1,6 +1,6 @@
 <?php
 
-require('partials/about.header.php');
+require "partials/about.header.php";
 
 if (isset($_SESSION["username"])) {
     if ($_SESSION["level"] === "admin") {
@@ -14,7 +14,7 @@ if (isset($_SESSION["username"])) {
 ?>
 
 <!-- konten -->
-<section id="about">
+<section id="about" class="pt-5">
     <div class="d-flex justify-content-center align-items-center" id="hero">
         <h2 class="text-center text-white fw-bold">ABOUT US</h2>
     </div>

@@ -1,18 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+
 /* style */
 body {
-    background-color: #f0f2f2;
+    background-color: #ffff;
+    font-family: 'Poppins', sans-serif;
 }
 
-.navbar-custom {
-    background-color: rgb(0, 0, 0, .8);
+/* navbar */
+nav li {
+    border: 2px solid transparent;
 }
-
 .nav-item:hover {
     border-bottom: 2px solid gold;
+
 }
 
 .img {
-    border-top: 5px solid salmon;
-    border-bottom: 5px solid skyblue ;
-    height: 80vh;
+    border-right: 1px solid #f0f2f2;
+}
+
+.nav-fixed {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Hero */
+#main {
+    padding-top: 70px;
+}
+
+.judul-populer {
+    margin: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    overflow: hidden;
+}
+
+footer h4:hover {
+    background-color: blue;
+    border-radius: 50px;
+}
+
+/* responsive */
+@media (max-width: 576px) {
+
+    /* Footer */
+    footer {
+        font-size: 15px;
+        height: 45px;
+    }
+    footer h4 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* nav */
+    nav .btn-outline-warninsg {
+        margin-top: 7px;
+    }
+    nav ul {
+        padding-bottom: 5px;
+    }
+
+    /* populer section */
+    #lainnya {
+        display: none;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 10px;
+        height: 45px;
+    }
+
+    footer h4 {
+        font-size: 15px;
+    }
 }
