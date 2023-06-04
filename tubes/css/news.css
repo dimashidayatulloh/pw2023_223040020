@@ -41,7 +41,7 @@ nav li {
 }
 #hero {
     height: 30vh;
-    background: url(../img/img-hero.jpg);
+    background: url(../img/blur-hero.jpg);
     background-size: cover;
 }
 

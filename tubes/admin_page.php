@@ -21,8 +21,15 @@ $username = $_SESSION['username'];
 
 $user = query("SELECT * FROM user WHERE username = '$username'")[0];
 
+// pagination
+$jumlahDataPerHalaman = 5;
+$jumlahData = count(query("SELECT * FROM user"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
 // Siapkan data user
-$users = query("SELECT * FROM user");
+$users = query("SELECT * FROM user LIMIT $awalData, $jumlahDataPerHalaman");
 
 // tombol cari ditekan
 if (isset($_POST['cari'])) {

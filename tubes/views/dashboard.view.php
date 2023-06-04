@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Halaman admin</title>
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -23,15 +24,19 @@
     </div>
 
     <!-- daftar -->
-    <div class="container my-5">
+    <div class="container my-4">
         <div class="card-body text-center pb-5">
             <h2 class="card-title">Daftar Pengguna</h2>
         </div>
 
         <!-- Button tambah -->
         <div class="position-absolute">
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success me-2">
                 <a class="nav-link" href="tambah.php">Add New List</a>
+            </button>
+            <!-- button cetak -->
+            <button type="button" class="btn btn-primary">
+                <a class="nav-link" href="cetak.php">Cetak</a>
             </button>
         </div>
 
@@ -66,7 +71,7 @@
                             <td><?= $user["email"]; ?></td>
                             <td><?= $user["level"]; ?></td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="ubah.php?id=<?= $user['id']; ?>">Ubah</a>
+                                <a class="btn btn-sm btn-warning" href="ubah.php?id=<?= $user['id']; ?>">Ubah</a>
                                 <a class="btn btn-sm btn-danger" href="hapus.php?id=<?= $user['id']; ?>">Hapus</a>
                             </td>
                         </tr>
@@ -75,6 +80,32 @@
             </table>
         </div>
     </div>
+
+    <!-- pagination -->
+    <section class="position-absolute start-50 translate-middle" style="top: 95%;">
+        <div class="container">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <?php if ($halamanAktif > 1) : ?>
+                        <li class="page-item"><a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>">
+                                &lt </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php for ($j = 1; $j <= $jumlahHalaman; $j++) : ?>
+                        <?php if ($j == $halamanAktif) : ?>
+                            <li class="page-item"><a class="page-link active" href="?halaman=<?= $j; ?>"><?= $j; ?></a></li>
+                        <?php else : ?>
+                            <li class="page-item"><a class="page-link" href="?halaman=<?= $j; ?>"><?= $j; ?></a></li>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+
+                    <?php if ($halamanAktif < $jumlahHalaman) : ?>
+                        <li class="page-item"><a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>">&gt</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
     <!-- bootstrap 5 js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

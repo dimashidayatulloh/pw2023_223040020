@@ -52,7 +52,7 @@ if (isset($_SESSION["username"])) {
                     <img src="img/laptop-1.jpg" class="card-img-top" height="250px">
                     <div class="card-body">
                         <p class="card-text"><small class="text-muted">Juni 02, 2023</small></p>
-                        <h5 class="card-title">Rekomendasi Laptop Harga 4 jutaan</h5>
+                        <h5 class="card-title">Rekomendasi Laptop 4 jutaan</h5>
                         <p class="card-text">
                             Semakin berkembangnya teknologi informasi dan teknologi ...
                             <a href="artikel1.php">Lihat Selengkapnya</a>

@@ -1,4 +1,4 @@
-// ambil element
+// ambil element user
 var keyword = document.getElementById('keyword');
 var tombolCari = document.getElementById('tombol-cari');
 var tabel = document.getElementById('tabel');

@@ -19,7 +19,7 @@ if (isset($_SESSION["username"])) {
         <h2 class="text-center text-white fw-bold">ABOUT US</h2>
     </div>
     <div class="container pt-5">
-        <div class="row justify-content-around fs-5 text-justify">
+        <div class="row justify-content-around fs-5">
             <div class="col-md-4">
                 <h3 class="text-primary pb-3">Tentang Web</h3>
                 <p>Web ini berisi konten yang membahas tentang teknologi. Dibuat oleh Dimas Hidayatulloh dengan tujuan untuk menuntaskan tugas besar mata kuliah pemograman web.</p>

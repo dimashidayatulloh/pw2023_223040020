@@ -31,7 +31,7 @@ nav li {
 }
 
 #hero {
-    background: url(../img/img-hero.jpg);
+    background: url(../img/blur-hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     opacity: .95;
