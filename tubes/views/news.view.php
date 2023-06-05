@@ -20,12 +20,12 @@ if (isset($_SESSION["username"])) {
     <!-- card -->
     <div class="container p-5">
         <div class="row mb-3" id="kategori">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h1 class="fw-bold">Blog</h1>
             </div>
 
             <!-- kategori -->
-            <div class="col-md-8 pt-2">
+            <div class="col-md-5 pt-2">
                 <form action="" method="get">
                     <a class="btn btn-primary me-2" href="news.php" role="button">All</a>
                     <?php foreach ($kategoris as $kategori) : ?>
@@ -33,6 +33,14 @@ if (isset($_SESSION["username"])) {
                     <?php endforeach; ?>
                 </form>
             </div>
+            <div class="col-md-4 pt-2">
+                <!-- live search -->
+                <form class="d-flex justify-content-end" role="search" action="" method="post">
+                    <input class="form-control me-2 w-50" type="search" placeholder="Search" aria-label="Search" name="judul" autocomplete="off" id="judul">
+                    <button class="btn btn-outline-primary" type="submit" name="cari" id="tombol-cari">Search</button>
+                </form>
+            </div>
+
 
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4" id="cardList">
@@ -54,7 +62,7 @@ if (isset($_SESSION["username"])) {
 </section>
 
 <!-- pagination -->
-<section class="position-absolute start-50 pb-5 translate-middle">
+<section class="position-absolute start-50 pb-5 translate-middle" id="pagination">
     <div class="container">
         <nav aria-label="Page navigation">
             <ul class="pagination">

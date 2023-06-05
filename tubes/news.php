@@ -33,4 +33,9 @@ if (isset($_GET['kategori'])) {
     $cards = cariK($_GET['kategori']);
 }
 
+// tombol cari ditekan
+if (isset($_POST['cari'])) {
+    $cards = cariJ($_POST['judul']);
+}
+
 require 'views/news.view.php';

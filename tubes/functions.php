@@ -153,6 +153,14 @@ function cariK($keyword)
     return query($query);
 }
 
+// cari
+function cariJ($judul)
+{
+    $query = "SELECT * FROM postingan WHERE judul LIKE '%$judul%'";
+
+    return query($query);
+}
+
 // reset password
 function resetPass($data)
 {
