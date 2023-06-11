@@ -1,13 +1,15 @@
 <?php
-require '../functions.php';
+require "../functions.php";
 
-$judul = $_GET['judul'];
+$judul = $_POST['judul'];
 
-$query = "SELECT * FROM postingan 
+$query = "SELECT * FROM postingan
     WHERE 
         judul LIKE '%$judul%' ";
 $cards = query($query);
 ?>
+
+
 
 <!-- list postingan -->
 <?php foreach ($cards as $card) : ?>

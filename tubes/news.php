@@ -17,7 +17,7 @@ $user = query("SELECT * FROM user WHERE username = '$username'")[0];
 
 // pagination
 $jumlahDataPerHalaman = 6;
-$jumlahData = count(query("SELECT * FROM user"));
+$jumlahData = count(query("SELECT * FROM postingan"));
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
 $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
 $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
@@ -34,7 +34,7 @@ if (isset($_GET['kategori'])) {
 }
 
 // tombol cari ditekan
-if (isset($_POST['cari'])) {
+if (isset($_POST['judul'])) {
     $cards = cariJ($_POST['judul']);
 }
 

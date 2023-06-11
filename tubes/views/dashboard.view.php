@@ -82,10 +82,10 @@
     </div>
 
     <!-- pagination -->
-    <section class="position-absolute start-50 translate-middle" style="top: 95%;">
+    <section class="">
         <div class="container">
             <nav aria-label="Page navigation">
-                <ul class="pagination">
+                <ul class="pagination justify-content-center">
                     <?php if ($halamanAktif > 1) : ?>
                         <li class="page-item"><a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>">
                                 &lt </a>

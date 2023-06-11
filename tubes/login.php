@@ -58,8 +58,7 @@ if (isset($_POST["login"])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body style="background: url(img/blur-hero.jpg);
-            background-size: cover;background-repeat:no-repeat;">
+<body style="background-color: #eaeaea;">
     <div class="card shadow mx-auto mt-5" style="max-width: 400px;">
         <div class="card-body">
             <h2 class="text-center pb-2">MASUK</h2>
@@ -80,8 +79,8 @@ if (isset($_POST["login"])) {
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberme">
-                    <label class="form-check-label" for="rememberme">Remember me</label>
+                    <input type="checkbox" class="form-check-input" id="showpass" onclick="showPass()">
+                    <label class="form-check-label" for="showpass">Show password</label>
                 </div>
                 <button type="submit" class="btn btn-success w-100" name="login">Masuk</button>
             </form>
@@ -92,6 +91,16 @@ if (isset($_POST["login"])) {
 
     <!-- bootstrap 5 js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script>
+        function showPass() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
     </script>
 </body>
 

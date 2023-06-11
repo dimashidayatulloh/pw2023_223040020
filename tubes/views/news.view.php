@@ -35,15 +35,15 @@ if (isset($_SESSION["username"])) {
             </div>
             <div class="col-md-4 pt-2">
                 <!-- live search -->
-                <form class="d-flex justify-content-end" role="search" action="" method="post">
+                <form class="d-flex justify-content-end" action="" method="post">
                     <input class="form-control me-2 w-50" type="search" placeholder="Search" aria-label="Search" name="judul" autocomplete="off" id="judul">
-                    <button class="btn btn-outline-primary" type="submit" name="cari" id="tombol-cari">Search</button>
+                    <button class="btn btn-outline-primary" type="submit" name="search" id="search-button">Search</button>
                 </form>
             </div>
 
 
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="cardList">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="search-container">
             <!-- list postingan -->
             <?php foreach ($cards as $card) : ?>
                 <div class="col">

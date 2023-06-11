@@ -20,24 +20,12 @@ keyword.addEventListener('keyup', function() {
     xhr.send();
 });
 
-// ambil element user
-var kataKunci = document.getElementById('kata-kunci');
-var tombolCari = document.getElementById('tombol-cari');
-var cardList = document.getElementById('cardList');
+const judul = document.getElementById("judul");
+const searchButton = document.getElementById("search-button");
+const searchContainer = document.getElementById("search-container");
 
-// keyword event
-kataKunci.addEventListener('keyup', function() {
-
-    // buat objek ajax
-    var xhr2 = new XMLHttpRequest();
-
-    xhr2.onreadystatechange = function () {
-        if (xhr2.readyState == 4 && xhr2.status == 200) {
-            cardList.innerHTML = xhr2.responseText;
-        }
-    }
-
-    // eksekusi ajax
-    xhr2.open('GET', 'ajax/cardList.php?judul=' + kataKunci.value, true);
-    xhr2.send();
-});
+judul.onkeyup = function() {
+    fetch("ajax/cardList.php?judul=" + judul.value)
+        .then((response) => (response.text()))
+        .then((text) => (searchContainer.innerHTML = text));
+}

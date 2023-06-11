@@ -24,7 +24,7 @@
     }
     ?>
 
-    <div class="container pt-5 mt-4">
+    <div class="container pt-5 mt-4 me-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Beranda</a></li>
@@ -34,38 +34,50 @@
     </div>
 
     <!-- main -->
-    <div class="card shadow mx-auto mt-5" style="max-width: 1000px;">
-        <div class="d-flex flex-row">
-            <div class="card-body col-md-8">
-                <form action="" method="post" autocomplete="off enctype=" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?= $user['id']; ?>">
-                    <input type="hidden" name="level" value="<?= $user['level']; ?>">
-                    <input type="hidden" name="gambarLama" value="<?= $user['gambar']; ?>">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" required value="<?= $user['username']; ?>" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required value="<?= $user['email']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="gambar" class="form-label">Ganti Profile</label>
-                        <input type="file" class="form-control form-control-sm" name="gambar" id="gambar">
-                    </div>
-                    <button type="submit" name="ubah" class="btn btn-success me-2">Simpan</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReset">Reset Password</button>
-                </form>
-            </div>
-            <div class="card-body col-md-5 text-center">
-                <h5 class="card-title mt-1">Profile</h5>
-                <img src="img/<?= $user['gambar']; ?>" class="img img-thumbnail my-2 rounded-circle" width="200">
+    <div class="container row mx-auto">
+        <div class="col-md-2 ps-5">
+            <div class="list-group">
+                <a href="" class="list-group-item list-group-item-action active" aria-current="true">
+                    Profile
+                </a>
+                <a href="logout.php" class="list-group-item list-group-item-action">Logout</a>
             </div>
         </div>
-        <div class="container pb-5">
-            <hr>
+        <div class="card shadow col-md-8" style="max-width: 1000px;">
+            <div class="d-flex flex-row">
+                <div class="card-body col-md-8">
+                    <form action="" method="post" autocomplete="off enctype=" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                        <input type="hidden" name="level" value="<?= $user['level']; ?>">
+                        <input type="hidden" name="gambarLama" value="<?= $user['gambar']; ?>">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required value="<?= $user['username']; ?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required value="<?= $user['email']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gambar" class="form-label">Ganti Profile</label>
+                            <input type="file" class="form-control form-control-sm" name="gambar" id="gambar">
+                        </div>
+                        <button type="submit" name="ubah" class="btn btn-success me-2">Simpan</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReset">Reset Password</button>
+                    </form>
+                </div>
+                <div class="card-body col-md-5 text-center">
+                    <h5 class="card-title mt-1">Profile</h5>
+                    <img src="img/<?= $user['gambar']; ?>" class="img img-thumbnail my-2 rounded-circle" width="200">
+                </div>
+            </div>
+            <div class="container pb-5">
+                <hr>
+            </div>
         </div>
     </div>
+
+
 
     <!-- modal reset password -->
     <div class="modal" tabindex="-1" id="modalReset">

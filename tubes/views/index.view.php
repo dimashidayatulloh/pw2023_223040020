@@ -16,7 +16,7 @@ if (isset($_SESSION["username"])) {
 
 <!-- Hero -->
 <section class="heroContent">
-    <div class="textBox container">
+    <div class="container textBox">
         <h2>Selamat <span>Datang</span></h2><br>
         <p>Semoga harimu menyenangkan!</p>
         <a href="" class="btn btn-primary rounded-pill">Get started</a>
